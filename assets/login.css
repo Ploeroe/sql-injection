@@ -1,0 +1,158 @@
+@font-face {
+    font-family: "Lemon";
+    src: url("./font/lemonmilk.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Louis";
+    src: url("./font/louis.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #c4eef1;
+    background-image: url(../image/kotak.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+#nav {
+    font-family: "Lemon";
+    opacity: 0.8;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.btnlogout a {
+    background: #07949e;
+    border-radius: 50px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    float: right;
+    padding: 6px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: white;
+    font-family: "Lemon";
+    border: none;
+}
+
+.btnlogout a:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+
+.imgtitle {
+    max-width: 500px;
+}
+
+.title {
+    font-family: "Lemon";
+    color: white;
+    -webkit-text-stroke: 1px #07949e;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2%;
+}
+
+.box {
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    /* padding: 3rem; */
+}
+
+.user {
+    font-family: "Lemon";
+    text-align: left;
+}
+
+.icon{
+    color: #07949e;
+}
+
+.kotakinput {
+    height: 35px;
+    border-radius: 30px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 0.8rem;
+    font-family: "Louis";
+}
+
+#username:focus {
+    outline: none;
+}
+
+#password:focus {
+    outline: none;
+}
+
+#captcha:focus {
+    outline: none;
+}
+
+
+.btnlogin {
+    background: #07949e;
+    border-radius: 50px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 25px;
+    margin-top: 12px;
+    text-decoration: none;
+    color: white;
+    font-family: "Lemon";
+    border: none;
+}
+
+.btnlogin:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+}
+
+.btnexit a{
+    background: #07949e;
+    border-radius: 50px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 25px;
+    margin-top: 12px;
+    text-decoration: none;
+    color: white;
+    font-family: "Lemon";
+    border: none;
+}
+
+.btnexit a:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+
+
+.btnexit:hover {
+    transform: translateY(-3px);
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+
+
+@media screen and (max-width: 880px) {
+    .box{
+        width: 600px;
+    }
+} 
