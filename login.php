@@ -11,18 +11,13 @@ if (isset($_POST["submit"])) {
 		$error1 = "Captcha salah";
 	} else {
 
-		$username = mysqli_real_escape_string($connect, $_POST['username']);
-		$password = mysqli_real_escape_string($connect, $_POST['password']);
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 
-		$result = mysqli_query($connect, "SELECT * FROM user WHERE username = '$username'");
+		$result = mysqli_query($connect, "SELECT * FROM user WHERE username = '{$username}' AND password = '{$password}'");
 
-		if (mysqli_num_rows($result) === 1) {
-			$row = mysqli_fetch_assoc($result);
-			if (password_verify($password, $row['password'])) {
-
-				$resultverified = mysqli_query($connect, "SELECT * FROM user WHERE username = '$username'");
-
-				$data = mysqli_fetch_array($resultverified);
+		if (mysqli_num_rows($result) !== 0) {
+				$data = mysqli_fetch_array($result);
 
 				$_SESSION["userid"] = $data['id'];
 				$_SESSION["userfirst"] = $data['first'];
@@ -35,9 +30,6 @@ if (isset($_POST["submit"])) {
 				$_SESSION["usergambar"] = $data['gambar'];
 
 				echo '<meta http-equiv="REFRESH" content="0;url=./?open=default" />';
-			} else {
-				$error2 = "Password salah";
-			}
 		} else {
 			$error3 = "Username tidak ditemukan";
 		}
@@ -97,7 +89,6 @@ if (empty($_SESSION["loginuser"])) {
 						</div>
 
 						<p>Don't have an account? <a href="?open=signup">Sign Up Here!</a></p>
-
 						<?php
 						if (isset($error1)) {
 						?>
